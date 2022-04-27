@@ -114,13 +114,15 @@ body {
 	font-weight: 300;
 	font-size: 12px;
 	line-height: 13px;
-	margin-bottom: 0;
-	width: 180px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	width: 176px;
 }
 
 .card-price {
 	font-weight: 600;
 	line-height: 13px;
+	margin-top: auto;
 	margin-bottom: 0;
 }
 .card-price > span {

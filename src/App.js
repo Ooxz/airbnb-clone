@@ -6,6 +6,7 @@ import data from './data';
 export default function App() {
 	const cardsData = data.map((item) => {
 		return(<Card 
+			key={item.id}
 		title = {item.title}
 		description = {item.description}
 		price = {item.price}
