@@ -1,30 +1,26 @@
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import Card from './components/Card';
-import data from './data';
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import Card from "./components/Card";
+import data from "./data";
 
 export default function App() {
-	const cardsData = data.map((item) => {
-		return(<Card 
-			key={item.id}
-		title = {item.title}
-		description = {item.description}
-		price = {item.price}
-		sticker = {item.stickers}
-		coverImg = {item.coverImg}
-		rating = {item.stats.rating}
-		reviewCount = {item.stats.reviewCount}
-		location = {item.location}
-		openSpots = {item.openSpots}
-		/>)
-	}) 
-	return (
-		<>
-			<Nav />
-			<Hero />
-			<div className="card-wrap">
-				{cardsData}			
-			</div>
-		</>
-	)
+  const cardsData = data.map((item) => {
+    return (
+      <Card
+        key={item.id}
+        item={item}
+        // with spread syntax we would write :
+        // {...item}
+        // In that case I then don't need to add .item in my props in Card.js
+        // so it's less code but maybe a little less explicite when you go back to your code
+      />
+    );
+  });
+  return (
+    <>
+      <Nav />
+      <Hero />
+      <div className="card-wrap">{cardsData}</div>
+    </>
+  );
 }
